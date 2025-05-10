@@ -1,0 +1,428 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../CANTILAN/IMAGES/bread.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	
+    <title>IMPOFINDS - Tinapay's Anime Collections</title> 
+    <style> 
+        :root {
+			--dark: #000000;
+			--black-red: #170101;
+			--dark-red: #560505;
+			--hot-red: #750000;
+			--maroon: #5e2727;
+			--light-red: #b27373;
+        }
+		:root{
+			--scarlet: #ae3434;
+			--gold: #b1a00d;
+			--milky-white: #fffedc;
+            --beige: #ada690;
+		}
+        body { 
+            font-family: Arial, sans-serif;
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0;
+            padding-bottom: 50px;
+            background-color: var(--dark);
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        header { 
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+            background: url('../CANTILAN/IMAGES/knyHeaderJP.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            padding: 0rem; 
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        header h1 { 
+            font-family: Times New Roman;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--milky-white);
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 0px;
+			padding: 0 10px;
+			max-width: 100%;
+        }
+        header p {
+            font-family: Arial;
+            color: var(--milky-white);
+			font-weight: bold;
+            letter-spacing: 3px;
+            margin-top: 0px;
+            margin-bottom: 50px;
+        }
+		.break-mobile {
+		  display: none;
+		}
+		@media (max-width: 600px) {
+			header {
+				background-attachment: scroll;
+				background-image: url('../CANTILAN/IMAGES/knyHeaderJPMEDIA.png');
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			header h1 {
+				line-height: 1.2;
+				word-break: break-word;
+				overflow-wrap: break-word;
+				white-space: normal;
+				font-size: 1.6rem;
+			}
+			header p {
+				margin-top: 1rem;
+				line-height: 1.0;
+			}
+			.break-mobile {
+				display: inline;
+			}
+			.know-more-flex ul {
+				flex: 1 1 100%;
+			}
+		}
+        nav { 
+            background: var(--dark-red);
+            padding: 0.2rem;
+            text-align: center; 
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 150px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.6s ease;
+        } 
+        nav a { 
+             
+            text-decoration: none; 
+            margin: 5px 10px; 
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+			transition: all 0.3s ease;
+        }
+		nav:hover {
+			background-color: var(--beige);
+			transform: scale(1.0) translateX(-0px);
+			box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.2);
+		}
+		nav a:link {
+			color: var(--milky-white);
+		}
+		nav a:hover:active:visited {
+			color: red; 
+		}
+		nav a:hover:active {
+			color: var(--milky-white);
+			background-color: var(--dark-red);
+		}
+		nav a:hover {
+			background-color: var(--light-red);
+			color: var(--dark);
+			transform: scale(1.1);
+		}
+		@media (max-width: 768px) { 
+			nav { 
+				flex-direction: column; 
+				text-align: center; 
+			} 
+			nav a { 
+				margin: 10px 0; 
+				display: block;
+			} 
+		}
+        .container {
+            display: grid; 
+            grid-template-columns: 2fr 1fr;
+            gap: 20px; 
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 20px;
+			align-items: start;
+			border: 15px solid var(--beige);
+			border-radius: 0px;
+			box-sizing: border-box;
+			min-height: 100vh;
+			max-width: 100%;
+			justify-content: center;
+        }
+		@media (max-width: 768px) {
+			.container { 
+				grid-template-columns: 1fr;
+				padding: 30px;
+				margin-top: 160px;
+			}
+		}
+        section { 
+            padding: 20px;
+            background: var(--maroon);
+            color: var(--milky-white);
+            border-radius: 8px;
+            transition: all 0.9s ease;
+            cursor: pointer;
+        } 
+        section:hover{
+            background: var(--hot-red);
+            border-color: solid var(--hot-red);
+            color: var(--milky-white);
+            transform: scale(1.0) translateX(-5px);
+            box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.4);
+        }
+        article { 
+            background: var(--milky-white); 
+            color: black; 
+            padding: 15px; 
+            margin-top: 10px; 
+            border-radius: 6px;
+        }
+        article h3 {
+            margin-top: 5px;
+            margin-bottom: 0px;
+        }
+        article p {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        aside {
+            background: var(--maroon); 
+            color: var(--milky-white); 
+            padding: 20px; 
+            border-radius: 8px;
+            transition: all 0.9s ease;
+			padding-bottom: 5px;
+			padding-left: 30px;
+			padding-right: 30px;
+        }
+		.aside-column {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+        aside:hover{
+            background: var(--light-red);
+            border-color: black;
+            color: var(--milky-white);
+            transform: scale(1.0) translateX(-5px);
+            box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.4);
+        }
+		html {
+			scroll-behavior: smooth;
+		}
+		h1 {
+			margin-top: 20px;
+			margin-bottom: 0px;
+			font-family: "Gill Sans", sans-serif;
+			font-size: 2rem;
+			font-weight: bold;
+		}
+		h2 {
+			margin-top: 4px;
+			margin-bottom: 0px;
+			font-family: "Gill Sans", sans-serif;
+			font-size: 1rem;
+			font-weight: bold;
+		}
+		p {
+			margin-top: 0px;
+			margin-bottom: 20px;
+		}
+        footer { 
+            background: var(--dark-red);
+			font-family: Times New Roman;
+            position: fixed;
+            left: 0;    
+            bottom: 0;  
+            width: 100%;
+            color: white; 
+            text-align: center; 
+            padding: 10px; 
+            margin-top: 20px; 
+            z-index: 1000; 
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+		.relative-box {
+			position: relative;
+			background-color: var(--hot-red);
+			color: white;
+			padding: 20px;
+			margin-top: 40px;
+			border-radius: 10px;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			overflow: hidden;
+		}
+		.absolute-tip {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background-color: var(--milky-white);
+			color: black;
+			padding: 8px 12px;
+			font-weight: bold;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0,0,0,0.2);
+			z-index: 10;
+			margin-top: 3px;
+		}
+		@media (max-width: 768px) {
+			.relative-box {
+				padding-bottom: 20px;
+			}
+			.absolute-tip {
+				position: relative;
+				top: auto;
+				margin-top: 10px;
+				right: auto;
+				text-align: center;
+				display: block;
+			}
+		}
+		a {
+			color: var(--gold);
+			font-family: Century Schoolbook;
+			text-decoration: none;
+		}
+		a, a:visited, a:hover, a:active {
+			color: var(--gold);
+			text-decoration: none;
+		}
+		ul li::marker {
+		  color: var(--light-red);
+		}
+		.know-more-flex {
+		  display: flex;
+		  flex-wrap: wrap;
+		  gap: 0px;
+		}
+
+		.know-more-flex ul {
+		  list-style: disc;
+		  padding: 0;
+		  padding-left: 25px;
+		  margin: 0;
+		  min-width: 200px;
+		}
+
+
+    </style> 
+</head>
+ 
+<body> 
+    <header> 
+        <h1>
+			Demon Slayer:<span class="break-mobile"><br></span> Kimetsu no Yaiba
+		</h1> 
+        <p>TINAPAY'S ANIME COLLECTION</p>
+    </header> 
+    <nav> 
+        <a href="index.html">Home</a> 
+        <a href="indexTCAboutUs.html">About Us</a> 
+		<a href="indexTCContactUs.html">Contact Us</a>
+        <a href="indexTCGallery.html">Gallery</a> 
+		<a href="indexTCdashboard.html">Dashboard</a> 
+    </nav>
+    <div class="container"> 
+        <main> 
+            <a href="#" style="text-decoration: none; color: inherit;">
+                <section> 
+                    <h2>Meet the characters!</h2>
+                    <article> 
+                        <h3>Demon Slayers</h3> 
+                        <p>Demon Slayers (鬼狩り <i>Oni kari</i>) are members of the Demon Slayer Corps whose main job is to...</p> 
+                    </article> 
+                </section> 
+            </a>
+		
+			<div style="max-width: 900px; margin-top: 20px; padding: 10px;">
+				<h1 style="color: var(--milky-white)">Kimetsu no Yaiba Overview</h1>
+				<h2 style="text-align: justify; color: var(--milky-white)">
+					In order to become a Demon Slayer, an individual must pass Final Selection, a test used as an entrance 
+					exam to join the Demon Slayer Corps. During this selection, examinees must survive for seven days on the 
+					mountain top of Mount Fujikasane, a perilous domain infested with demons.
+				</h2>
+				<br>
+				<p style="text-align: justify; color: var(--milky-white)">
+					The examinees must rely solely on the skills they have developed in training. The majority of candidates 
+					participating in the Final Selection have undergone extensive training under the guidance of a cultivator of 
+					a Breathing Style. However, there is one exceptional case of a Demon Slayer who entered on their own volition 
+					without previous training.
+				</p>
+				<p style="text-align: justify; color: var(--milky-white)">
+					Candidates who complete the Final Selection are issued the standard uniform, as well as being given the 
+					opportunity to choose the ore for their Nichirin Sword, which is designed to eliminate demons efficiently.
+				</p>
+					<div style="text-align: center;">
+						<img src="IMAGES/finalselection.jpg" alt="finalselection" style="max-width: 100%; height: auto; margin-top: 0; margin-bottom: 15px;">
+					</div>
+				
+				<h1 style="font-size: 1.5rem; color: var(--milky-white)">Know more about</h1>
+				<div class="know-more-flex">
+					<ul>
+						<li><a href="indexImpoFindsHome.html">Breathing Styles</a></li>
+						<li><a href="indexImpoFindsHome.html">Demon Slayer Mark</a></li>
+						<li><a href="indexImpoFindsHome.html">Equipment</a></li>
+					</ul>
+					<ul>
+						<li><a href="indexImpoFindsHome.html">Hashira</a></li>
+						<li><a href="indexImpoFindsHome.html">Ranks</a></li>
+						<li><a href="indexImpoFindsHome.html">Salary</a></li>
+					</ul>
+					<ul>
+						<li><a href="indexImpoFindsHome.html">Trivia</a></li>
+						<li><a href="indexImpoFindsHome.html">Cannon Ships</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="relative-box">
+				<strong>Need help?</strong> You can ask question/s about our Demon Slayer collections to our question form.
+				<a href="indexTCContactUs.html" class="absolute-tip">Ask questions here!</a>
+			</div>
+        </main>
+		
+		<div class="aside-column">
+			<aside> 
+				<h2>INTRODUCTION</h2> 
+				<p>In Taisho-era Japan, kindhearted Tanjiro Kamado makes a living selling charcoal. But his peaceful life 
+				is shattered when a demon slaughters his entire family. His little sister Nezuko is the only survivor, but 
+				she has been transformed into a demon herself! Tanjiro sets out on a dangerous journey to find a way to 
+				return his sister to normal and destroy the demon who ruined his life.</p>
+				<p>Learning to slay demons won't be easy, and Tanjiro barely knows where to start. The surprise appearance
+				of another boy named Giyu, who seems to know what's going on might provide some answers—but only if Tanjiro 
+				can stop Giyu from killing his sister first!</p>
+			</aside>
+		
+			<aside id="contact">
+				<h2><i class="fas fa-address-book"></i> CONTACT US</h2>
+				<p>For more inquiries about the collections, you can contact us at:</p>
+				<p>✉: kolektabread/impofinds@philippines.com<br>☎: +63-917-123-4567<br><i class="fas fa-globe"></i>: ImpoFinds Philippines - Anime Collections</p>
+				<p>Or ask questions on our page question form.<strong> We reply within the day! Our customers is our priority.</strong></p>
+			</aside>
+			
+			<img src="../CANTILAN/IMAGES/promo.png" alt="promo" style="width: 100%; border-radius: 8px; margin-top: 2px;">
+		</div>
+		
+    </div> 
+    <footer>&copy; 2025 Tinapay's Collection. All rights reserved.</footer> 
+</body> 
+</html>

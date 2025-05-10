@@ -1,0 +1,274 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../CANTILAN/IMAGES/bread.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	
+    <title>IMPOFINDS - Tinapay's Anime Collections</title> 
+    <style> 
+        :root {
+			--dark: #000000;
+			--black-violet: #291d32;
+			--midnight-blue: #3c3256;
+			--dark-red: #560505;
+        }
+		:root{
+			--light-magenta: #bda2bf;
+			--light-pink: #fed2da;
+			--milky-white: #fffedc;
+            --beige: #ada690;
+		}
+        body { 
+            font-family: Arial, sans-serif;
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0;
+            padding-bottom: 50px;
+            background-color: var(--light-magenta);
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        header { 
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+            background: url('../CANTILAN/IMAGES/knyGallery.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            padding: 0rem; 
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        header h1 { 
+            font-family: Times New Roman;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--milky-white);
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 0px;
+			padding: 0 10px;
+			max-width: 100%;
+        }
+        header p {
+            font-family: Arial;
+            color: var(--milky-white);
+			font-weight: bold;
+            letter-spacing: 3px;
+            margin-top: 0px;
+            margin-bottom: 50px;
+        }
+		.break-mobile {
+		  display: none;
+		}
+		@media (max-width: 600px) {
+			header {
+				background-attachment: scroll;
+				background-image: url('../CANTILAN/IMAGES/knyGalleryMEDIA.png');
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			header h1 {
+				line-height: 1.2;
+				word-break: break-word;
+				overflow-wrap: break-word;
+				white-space: normal;
+				font-size: 1.6rem;
+			}
+			header p {
+				margin-top: 1rem;
+				line-height: 1.0;
+			}
+			.break-mobile {
+				display: inline;
+			}
+		}
+        nav { 
+            background: var(--black-violet);
+            padding: 0.2rem;
+            text-align: center; 
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 150px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.6s ease;
+        } 
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            margin: 5px 10px; 
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+		nav:hover {
+			background-color: var(--midnight-blue);
+			transform: scale(1.0) translateX(-0px);
+			box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.2);
+		}
+		nav a:link {
+			color: var(--milky-white);
+		}
+		nav a:hover:active:visited {
+			color: red; 
+		}
+		nav a:hover:active {
+			color: var(--dark-red);
+			background-color: var(--beige);
+		}
+		nav a:hover {
+			background-color: var(--light-pink);
+			color: var(--dark);
+			transform: scale(1.1);
+		}
+		@media (max-width: 768px) { 
+			nav { 
+				flex-direction: column; 
+				text-align: center; 
+			} 
+			nav a { 
+				margin: 10px 0; 
+				display: block;
+			} 
+		}
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+			margin: 10px auto 80px auto;
+			align-text: center;
+			margin-bottom: 10px;
+        } 
+		@media (max-width: 768px) { 
+			.container { 
+				grid-template-columns: 1fr;
+				padding: 30px;
+				margin-top: 140px;
+				text-align: center;
+			}
+		}
+		.centered-content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+        .centered-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+		.centered-content img {
+			max-width: 100%;
+			height: auto;
+		}
+		.responsive-image-wrapper {
+			padding: 10px;
+			box-sizing: border-box;
+			width: 100%;
+		}
+        footer { 
+            background: var(--black-violet);
+			font-family: Times New Roman;
+            position: fixed;
+            left: 0;    
+            bottom: 0;  
+            width: 100%;
+            color: white; 
+            text-align: center; 
+            padding: 10px; 
+            margin-top: 20px; 
+            z-index: 1000; 
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+		.gallery-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 17px;
+			margin-top: 3px;
+			margin-bottom: 40px;
+		}
+		.gallery-grid img,
+		.gallery-grid video {
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+		}
+		.gallery-grid img:hover,
+		.gallery-grid video:hover {
+			transform: scale(1.05);
+			filter: brightness(1.1);
+			transition: transform 0.9s ease, filter 0.3s ease;
+			cursor: pointer;
+		}
+		@media (max-width: 768px) {
+			.gallery-grid {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 9px;
+			}
+		}
+		
+    </style> 
+</head> 
+<body> 
+    <header> 
+        <h1>
+			Demon Slayer:<span class="break-mobile"><br></span> Kimetsu no Yaiba
+		</h1>  
+        <p>TINAPAY'S ANIME COLLECTION</p>
+    </header> 
+    <nav> 
+        <a href="index.html">Home</a> 
+        <a href="indexTCAboutUs.html">About Us</a> 
+		<a href="indexTCContactUs.html">Contact Us</a>
+        <a href="indexTCGallery.html">Gallery</a> 
+		<a href="indexTCdashboard.html">Dashboard</a> 
+    </nav>
+    <div class="container"> 
+        <main> 
+			<section class="centered-content">
+				<h2 style="color: var(--dark);">Tinapay's Anime Collection Gallery</h2>
+				<div class="gallery-grid">
+
+					<img src="../CANTILAN/IMAGES/knymangas.jpg" alt="knymangas">
+					<img src="../CANTILAN/IMAGES/knykeychains.jpg" alt="knykeychains">
+					<img src="../CANTILAN/IMAGES/giyuustuff.jpg" alt="giyuustuff">
+					<img src="../CANTILAN/IMAGES/muichirostuff.jpg" alt="muichirostuff">
+
+					<video controls>
+						<source src="../CANTILAN/VIDEOS/inosjiro.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<video controls>
+						<source src="../CANTILAN/VIDEOS/shinobu.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<video controls>
+						<source src="../CANTILAN/VIDEOS/muichiro.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<video controls>
+						<source src="../CANTILAN/VIDEOS/nezukoxzenitsu.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
+			</section>
+		</div>
+        </main>
+    </div> 
+    <footer>&copy; 2025 Tinapay's Collection. All rights reserved.</footer> 
+</body> 
+</html>

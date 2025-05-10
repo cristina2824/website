@@ -1,0 +1,288 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../CANTILAN/IMAGES/bread.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	
+    <title>IMPOFINDS - Tinapay's Anime Collections</title> 
+    <style> 
+        :root {
+			--mahogany: #725f34;
+			--dark: #000000;
+			--gray: #2e2930;
+			--dark-red: #560505;
+			--maroon: #5e2727;
+			--light-red: #b27373;
+        }
+		:root{
+			--gold: #b1a00d;
+			--metal: #e0d469;
+			--milky-white: #fffedc;
+            --beige: #ada690;
+		}
+        body { 
+            font-family: Arial, sans-serif;
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0;
+            padding-bottom: 50px;
+            background-color: var(--mahogany);
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        header { 
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+            background: url('../CANTILAN/IMAGES/knyAboutUs.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            padding: 0rem; 
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        header h1 { 
+            font-family: Times New Roman;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--black-red);
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 0px;
+			padding: 0 10px;
+			max-width: 100%;
+        }
+        header p {
+            font-family: Arial;
+            color: var(--black-red);
+			font-weight: bold;
+            letter-spacing: 3px;
+            margin-top: 0px;
+            margin-bottom: 50px;
+        }
+		.break-mobile {
+		  display: none;
+		}
+		@media (max-width: 600px) {
+			header {
+				background-attachment: scroll;
+				background-image: url('../CANTILAN/IMAGES/knyAboutUsMEDIA.png');
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+		  header h1 {
+			line-height: 1.2;
+			word-break: break-word;
+			overflow-wrap: break-word;
+			white-space: normal;
+			font-size: 1.6rem;
+		  }
+		  header p {
+			margin-top: 1rem;
+			line-height: 1.0;
+		  }
+		  .break-mobile {
+			display: inline;
+		  }
+		}
+        nav { 
+            background: var(--dark);
+            padding: 0.2rem;
+            text-align: center; 
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 150px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.6s ease;
+        } 
+        nav a { 
+            
+            text-decoration: none; 
+            margin: 5px 10px; 
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+		nav:hover {
+			background-color: var(--dark-red);
+			transform: scale(1.0) translateX(-0px);
+			box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.2);
+		}
+		nav a:link {
+			color: var(--milky-white);
+		}
+		nav a:hover:active:visited {
+			color: red; 
+		}
+		nav a:hover:active {
+			color: var(--metal);
+			background-color: var(--gray);
+		}
+		nav a:hover {
+			background-color: var(--gold);
+			color: var(--dark);
+			transform: scale(1.1);
+		}
+		@media (max-width: 768px) { 
+			nav { 
+				flex-direction: column; 
+				text-align: center; 
+			} 
+			nav a { 
+				margin: 10px 0; 
+				display: block;
+			} 
+		}
+        .container {
+            display: grid; 
+            grid-template-columns: 2fr 2fr;
+            gap: 20px; 
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 20px;
+			align-items: start;
+			border: 15px solid var(--beige);
+			border-radius: 0px;
+			box-sizing: border-box;
+			min-height: 100vh;
+			max-width: 100%;
+        } 
+		@media (max-width: 768px) { 
+			.container { 
+				grid-template-columns: 1fr;
+				padding: 30px;
+				margin-top: 160px;
+			}
+		}
+        section { 
+            padding: 20px;
+			padding-top: 1px;
+			padding-bottom: 1px;
+			margin-bottom: 5px;
+            background: var(--mahogany);
+            color: var(--milky-white);
+			border-color: 3px solid black;
+            transition: all 0.3s ease;
+			text-align: justify;
+        } 
+        aside {
+            background: var(--dark-red); 
+            color: var(--milky-white); 
+            padding: 20px; 
+            border-radius: 8px;
+            transition: all 0.9s ease;
+			padding-bottom: 5px;
+			padding-left: 30px;
+			padding-right: 30px;
+        }
+		.aside-column {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+        aside:hover{
+            background: var(--light-red);
+            border-color: solid var(--light-red);
+            color: white;
+            transform: scale(1.0) translateX(-5px);
+            box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.4);
+        }
+		h1 {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			font-family: "Gill Sans", sans-serif;
+			font-size: 2rem;
+			font-weight: bold;
+			color: black;
+		}
+		h2 {
+			margin-top: 4px;
+			margin-bottom: 0px;
+			font-family: "Gill Sans", sans-serif;
+			font-size: 1rem;
+			font-weight: bold;
+		}
+		p {
+			margin-top: 0px;
+			margin-bottom: 20px;
+		}
+        footer { 
+            background: var(--dark);
+			font-family: Times New Roman;
+            position: fixed;
+            left: 0;    
+            bottom: 0;  
+            width: 100%;
+            color: white; 
+            text-align: center; 
+            padding: 10px; 
+            margin-top: 20px; 
+            z-index: 1000; 
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+    </style> 
+</head> 
+<body> 
+    <header> 
+        <h1>
+			Demon Slayer:<span class="break-mobile"><br></span> Kimetsu no Yaiba
+		</h1> 
+        <p>TINAPAY'S ANIME COLLECTION</p>
+    </header> 
+    <nav> 
+        <a href="index.html">Home</a> 
+        <a href="indexTCAboutUs.html">About Us</a> 
+		<a href="indexTCContactUs.html">Contact Us</a>
+        <a href="indexTCGallery.html">Gallery</a> 
+		<a href="indexTCdashboard.html">Dashboard</a> 
+    </nav>
+    <div class="container"> 
+        <main> 
+			<h1 style="margin-left: 20px;">Who is behind ImpoFinds - Tinapay's Anime Collections?</h1>
+            <section> 
+                    <section style="padding: 0; overflow: hidden;">
+						<img src="../CANTILAN/IMAGES/tina.jpg" alt="tina" style="width: 100%; height: auto; display: block; object-fit: cover;">
+					</section>
+            </section>
+        </main>
+		
+		<div class="aside-column">
+			<aside> 
+				<p>Tinapay’s Anime Collection, managed by Cristina Grace J. Cantilan—one of the owners of ImpoFinds—is a 
+				specialized division of the business that focuses on selling branded, authentic, and high-quality anime merchandise 
+				sourced directly from Japan. While ImpoFinds caters to a wide range of anime-themed products, Tinapay’s Anime 
+				Collection highlights exclusive Demon Slayer: Kimetsu no Yaiba merchandise, including Japanese and English mangas, 
+				collectible figurines, keychains, plushies, and other related items.</p>
+				<p>This focused collection ensures that dedicated fans and collectors of Demon Slayer have access to carefully 
+				curated and genuine products, whether for personal enjoyment or investment purposes.</p>
+				
+				<h2 style="font-size: 1.5rem; padding-bottom: 10px;">Why ImpoFinds?</h2> 
+				<p>An important aspect of our business is investment driven growth. Rather than relying solely on internal 
+				capital, we seek investors who can contribute to the expansion of our inventory and market reach and giving them 
+				an option to cycle their money back into inventory for a higher buy out later due to their reinvestment or they 
+				get the profits of their investment in return. </p>
+				<p>We specifically seek investors to support inventory growth rather than the physical aspects of business 
+				operations. Their contributions will directly enhance our product offerings and market reach, ultimately leading 
+				to higher profit yields.</p>
+			</aside>
+		</div>
+		
+    </div> 
+    <footer>&copy; 2025 Tinapay's Collection. All rights reserved.</footer> 
+</body> 
+</html>

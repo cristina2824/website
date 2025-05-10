@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="../CANTILAN/IMAGES/bread.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <title>Tinapay Dashboard</title>
+    <style>
+		:root {
+			--dark: #000000;
+			--black-red: #170101;
+			--dark-red: #560505;
+			--hot-red: #750000;
+			--maroon: #5e2727;
+			--light-red: #b27373;
+			--gold: #b1a00d;
+			--milky-white: #fffedc;
+			--beige: #ada690;
+			--midnight-blue: #42446c;
+			--black-blue: #242647;
+            --dark-blue: #25285d;
+			--brown: #463f32;
+			--orange: #875b0a;
+		}
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			font-family: Arial, sans-serif;
+			background-color: var(--dark);
+			color: var(--milky-white);
+			height: 100vh;
+			overflow: hidden;
+			display: flex;
+		}
+		.sidebar {
+			width: 250px;
+			background: var(--black-blue);
+			display: flex;
+			flex-direction: column;
+			padding: 20px;
+		}
+		.sidebar h2 {
+			margin-bottom: 20px;
+			color: var(--milky-white);
+			text-align: center;
+		}
+		.sidebar a {
+			text-decoration: none;
+			color: var(--milky-white);
+			font-weight: bold;
+			padding: 10px;
+			margin: 5px 0;
+			display: block;
+			border-radius: 4px;
+			transition: background 0.3s ease;
+		}
+		.sidebar a:hover {
+			background: var(--milky-white);
+			color: var(--dark);
+		}
+		.main-content {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			overflow: auto;
+		}
+		header {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background: url('../CANTILAN/IMAGES/knyDashboard.png') no-repeat fixed;
+			background-size: cover;
+			padding: 0;
+			text-align: center;
+			position: sticky;
+			top: 0;
+			z-index: 999;
+		}
+		header h1 {
+			font-family: 'Times New Roman', Times, serif;
+			font-size: 2.5rem;
+			font-weight: bold;
+			color: var(--milky-white);
+			letter-spacing: 2px;
+			margin-top: 20px;
+			margin-bottom: 0;
+			padding: 0 10px;
+			max-width: 100%;
+		}
+		header p {
+			font-family: Arial, sans-serif;
+			font-weight: bold;
+			color: var(--milky-white);
+			letter-spacing: 3px;
+			margin-top: 15px;
+			margin-bottom: 20px;
+		}
+		.navbar {
+			display: flex;
+			justify-content: center;
+			background-color: var(--beige);
+			padding: 0.1rem;
+			gap: 20px;
+			flex-wrap: wrap;
+		}
+		.navbar a {
+			text-decoration: none;
+			color: var(--dark);
+			font-weight: bold;
+			padding: 8px 16px;
+			border-radius: 4px;
+			transition: background 0.3s ease;
+		}
+		.navbar a:hover {
+			background-color: var(--orange);
+			color: var(--milky-white);
+		}
+		.break-mobile {
+			display: none;
+		}
+		@media (max-width: 600px) {
+			header {
+				background-attachment: scroll;
+				background-image: url('../CANTILAN/IMAGES/knyDashboardMEDIA.png');
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			header h1 {
+				font-size: 1.6rem;
+				line-height: 1.2;
+				word-break: break-word;
+				overflow-wrap: break-word;
+				white-space: normal;
+			}
+			header p {
+				margin-top: 1rem;
+				line-height: 1;
+			}
+			.break-mobile {
+				display: inline;
+			}
+		}
+		.dashboard {
+			padding: 20px;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 20px;
+		}
+		.box {
+			background: var(--maroon);
+			padding: 20px;
+			border-radius: 8px;
+			transition: 0.3s;
+		}
+		.box:hover {
+			background: var(--dark-red);
+			transform: translateY(-5px);
+		}
+		.box h3 {
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+		.box p {
+			font-size: 28px;
+			font-weight: bold;
+			color: var(--beige);
+		}
+		.chart {
+			margin-top: 30px;
+			background: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			height: 300px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #888;
+		}
+		footer { 
+            background: var(--brown);
+			font-family: Times New Roman;
+            position: fixed;
+            left: 0;    
+            bottom: 0;  
+            width: 100%;
+            color: white; 
+            text-align: center; 
+            padding: 10px; 
+            margin-top: 20px; 
+            z-index: 1000; 
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+		h1 {
+			margin-top: 20px;
+			margin-bottom: 0px;
+			font-family: "Gill Sans", sans-serif;
+			font-size: 5rem;
+			font-weight: bold;
+		}
+		h2 {
+			margin-top: 4px;
+			margin-bottom: 0px;
+			font-family: "Gill Sans", sans-serif;
+			font-size: 1.5rem;
+			font-weight: bold;
+			letter-spacing: 3px;
+		}
+		p {
+			margin-top: 0px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="sidebar">
+		<h2><img src="../CANTILAN/IMAGES/impofindsLogo.png" alt="promo" style="width: 100%; border-radius: 8px; margin-top: 2px;"></h2>
+		<a href="index.html">Home</a> 
+        <a href="indexTCAboutUs.html">About Us</a> 
+		<a href="indexTCContactUs.html">Contact Us</a>
+        <a href="indexTCGallery.html">Gallery</a> 
+		<a href="indexTCdashboard.html">Dashboard</a>
+	</div>
+	<div class="main-content">
+		<header>
+			<h1>
+				Demon Slayer:<span class="break-mobile"><br></span> Kimetsu no Yaiba
+			</h1>
+			<p>TINAPAY'S ANIME COLLECTION</p>
+		</header>
+		<nav class="navbar">
+			<a href="#">Orders</a>
+			<a href="#">Customers</a>
+			<a href="#">Store</a>
+			<a href="#">Messages</a>
+		</nav>
+		<div class="dashboard">
+			<div class="box">
+				<h3>Total Sales</h3>
+				<p>$12,430</p>
+			</div>
+			<div class="box">
+				<h3>New Users</h3>
+				<p>342</p>
+			</div>
+			<div class="box">
+				<h3>Orders</h3>
+				<p>1,280</p>
+			</div>
+			<div class="box">
+				<h3>Feedback</h3>
+				<p>89%</p>
+			</div>
+		</div>
+		<div class="chart">
+			Chart Placeholder
+		</div>
+	</div>
+	<footer>&copy; 2025 Tinapay's Collection. All rights reserved.</footer> 
+</body>
+</html>
+

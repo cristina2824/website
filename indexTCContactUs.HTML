@@ -1,0 +1,299 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../CANTILAN/IMAGES/bread.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	
+    <title>IMPOFINDS - Tinapay's Anime Collections</title> 
+    <style> 
+        :root {
+			--dark: #000000;
+			--black-red: #170101;
+			--hot-red: #750000;
+			--maroon: #5e2727;
+			--dark-beige: #76615d;
+			--black-violet: #2d2534;
+        }
+		:root{
+			--metal: #e0d469;
+			--milky-white: #fffedc;
+		}
+        body { 
+            font-family: Arial, sans-serif;
+            line-height: 1.6; 
+            margin: 0; 
+            padding: 0;
+            padding-bottom: 50px;
+            background-color: var(--dark-beige);
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        header { 
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+            background: url('../CANTILAN/IMAGES/knyContactUs.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            padding: 0rem; 
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        header h1 { 
+            font-family: Times New Roman;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--dark);
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 0px;
+			padding: 0 10px;
+			max-width: 100%;
+        }
+        header p {
+            font-family: Arial;
+            color: var(--dark);
+			font-weight: bold;
+            letter-spacing: 3px;
+            margin-top: 0px;
+            margin-bottom: 50px;
+        }
+		.break-mobile {
+		  display: none;
+		}
+		@media (max-width: 600px) {
+			header {
+				background-attachment: scroll;
+				background-image: url('../CANTILAN/IMAGES/knyContactUsMEDIA.png');
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			header h1 {
+				line-height: 1.2;
+				word-break: break-word;
+				overflow-wrap: break-word;
+				white-space: normal;
+				font-size: 1.6rem;
+			}
+			header p {
+				margin-top: 1rem;
+				line-height: 1.0;
+			}
+			.break-mobile {
+				display: inline;
+			}
+		}
+        nav { 
+            background: var(--black-violet);
+            padding: 0.2rem;
+            text-align: center; 
+            display: flex;
+            justify-content: center;
+            position: fixed;
+            top: 150px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.6s ease;
+        } 
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            margin: 5px 10px; 
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+        }
+		nav:hover {
+			background-color: var(--dark);
+			transform: scale(1.0) translateX(-0px);
+			box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.2);
+		}
+		nav a:link {
+			color: var(--milky-white);
+		}
+		nav a:hover:active:visited {
+			color: red; 
+		}
+		nav a:hover:active {
+			color: var(--milky-white);
+			background-color: var(--maroon);
+		}
+		nav a:hover {
+			background-color: var(--metal);
+			color: var(--hot-red);
+			transform: scale(1.1);
+		}
+		@media (max-width: 768px) { 
+			nav { 
+				flex-direction: column; 
+				text-align: center; 
+			} 
+			nav a { 
+				margin: 10px 0; 
+				display: block;
+			} 
+		}
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+			margin: 10px auto 80px auto;
+			align-text: center;
+			margin-bottom: 10px;
+        } 
+		@media (max-width: 768px) { 
+			.container {
+				padding: 30px;
+				margin-top: 130px;
+				text-align: center;
+			}
+		}
+		.centered-content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+        .centered-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+		.centered-content img {
+			max-width: 100%;
+			height: auto;
+		}
+		.responsive-image-wrapper {
+			padding: 10px;
+			box-sizing: border-box;
+			width: 100%;
+		}
+        footer { 
+            background: var(--black-violet);
+			font-family: Times New Roman;
+            position: fixed;
+            left: 0;    
+            bottom: 0;  
+            width: 100%;
+            color: white; 
+            text-align: center; 
+            padding: 10px; 
+            margin-top: 20px; 
+            z-index: 1000; 
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+		.contact-form {
+			background: linear-gradient(to bottom right, #fddde6, #fceabb);
+			padding: 25px;
+			border-radius: 10px;
+			text-align: center;
+			margin-bottom: 30px;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+			width: 90%;
+			max-width: 650px;
+			margin: 0 auto 20px auto;
+			box-sizing: border-box;
+			margin-bottom: 20px;
+		}
+
+		.contact-form h2 {
+			font-family: Arial, sans-serif;
+			font-size: 24px;
+			margin-bottom: 20px;
+			color: #6a1b9a;
+		}
+
+		.contact-form input,
+		.contact-form textarea {
+			width: 90%;
+			max-width: 500px;
+			padding: 15px;
+			margin: 10px auto;
+			border: none;
+			border-radius: 10px;
+			box-shadow: 0 0 5px rgba(0,0,0,0.1);
+			display: block;
+			font-size: 16px;
+			font-family: Arial, sans-serif;
+		}
+
+		.contact-form input:focus {
+			outline: none;
+			border: 2px solid orange;
+		}
+
+		.contact-form button {
+			background: linear-gradient(to right, #d16ba5, #fbb03b);
+			color: white;
+			padding: 15px 30px;
+			font-size: 16px;
+			border: none;
+			border-radius: 30px;
+			cursor: pointer;
+			margin-top: 10px;
+			transition: background 0.3s ease;
+		}
+
+		.contact-form button:hover {
+			background: linear-gradient(to right, #fbb03b, #d16ba5);
+		}
+    </style> 
+</head> 
+<body> 
+    <header> 
+        <h1>
+			Demon Slayer:<span class="break-mobile"><br></span> Kimetsu no Yaiba
+		</h1> 
+        <p>TINAPAY'S ANIME COLLECTION</p>
+    </header> 
+    <nav> 
+        <a href="index.html">Home</a> 
+        <a href="indexTCAboutUs.html">About Us</a> 
+		<a href="indexTCContactUs.html">Contact Us</a>
+        <a href="indexTCGallery.html">Gallery</a>   
+		<a href="indexTCdashboard.html">Dashboard</a> 
+    </nav>
+    <div class="container"> 
+        <main> 
+			<div class="centered-content">
+				<h1 style="color: var(--milky-white);">Contact ImpoFinds - Tinapay's Anime Collection</h1>
+				<div class="contact-form">
+					<h2><u style="color: var(--black-violet);">Get in touch and send your questions here!</u></h2>
+					<form>
+					<input type="text" placeholder="Sender Name" required>
+					<input type="email" placeholder="Email" required>
+					<textarea placeholder="Your Message" rows="5" required></textarea>
+					<button type="submit">Submit →</button>
+					</form>
+				</div>
+				<h3 style="color: var(--dark); margin-top: 0px; margin-bottom: 40px;">Note: ImpoFinds will reply to your message as soon as possible. </h3>
+			</div>
+			
+			<div class="map-section" style="max-width: 650px; margin: 0 auto; text-align: left;">
+					<h3 style="color: var(--milky-white);">How to Get Here</h3>
+					<p style="color: var(--milky-white);">We're located at 900 San Marcelino St Ermita Manila via Google Maps:</p>
+					<iframe 
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.513245772692!2d120.9836033!3d14.5864424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca208c903e9f%3A0x866d549cf2d6912!2s900%20San%20Marcelino%20St%2C%20Ermita%2C%20Manila%2C%201000%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1684586613219!5m2!1sen!2sph" 
+						width="100%" 
+						height="350" 
+						style="border:0; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" 
+						allowfullscreen="" 
+						loading="lazy" 
+						referrerpolicy="no-referrer-when-downgrade">
+					</iframe>
+				</div>
+        </main>
+    </div> 
+    <footer>&copy; 2025 Tinapay's Collection. All rights reserved.</footer> 
+</body> 
+</html>
